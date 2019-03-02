@@ -20,9 +20,9 @@ public class Parser {
      * @param rectBST       Binary Search tree associated with the parser object
      *                      and input file upon which the commands will be run
      */
-    Parser(File inputFile, BSTRectangle<RectKey, RectData> rectBST) {
+    Parser(File inputFile, Tree<char[]> dnaTree) {
         try {
-            mBST = rectBST;
+            mTree = dnaTree;
             mScan = new Scanner(inputFile);
         } 
         catch (FileNotFoundException e) {
@@ -51,10 +51,10 @@ public class Parser {
             } 
             else if (command.equals("search")) {
                 RectKey nodeKey = new RectKey(mScan.next());
-                mBST.search(nodeKey);
+                mTree.search(nodeKey);
             } 
             else if (command.equals("print")) {
-                mBST.print();
+                mTree.print();
             }
         }
         mScan.close();
@@ -68,11 +68,7 @@ public class Parser {
         // name is the key of the inserted rectangle
         String dna = mScan.next();
         // data is an array that holds the rectangle coordinates
-        int[] data = new int[4];
-        for (int i = 0; i < 4; i++) {
-            data[i] = Integer.parseInt(mScan.next());
-        }
-        // nodeKey and nodeData are the elements of the new node, newNode
+        char[] sequence = dna.toCharArray();
         
         DNATreeNode<String> newNode;
         newNode = new BSTNode<RectKey, RectData>(nodeKey, nodeData);
@@ -107,7 +103,7 @@ public class Parser {
         // removeKey is the key of the node to remove
         RectKey removeKey = new RectKey(mScan.next());
         // temp is used to check if the specified node exists
-        BSTNode<RectKey, RectData> temp = mBST.remove(removeKey);
+        BSTNode<RectKey, RectData> temp = mTree.remove(removeKey);
         if (temp == null) {
             System.out.println("Rectangle rejected " + removeKey);
         }
@@ -122,6 +118,6 @@ public class Parser {
      * This holds the tree commands are executed upon
      * made protected for testing purposes
      */
-    protected Tree<char[]> mBST;
+    protected Tree<char[]> mTree;
 }
 
