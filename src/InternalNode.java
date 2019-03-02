@@ -9,7 +9,118 @@
  * Internal Node Object
  * *description*
  */
-public class InternalNode {
 
+public class InternalNode extends DNATreeNode {
+    /**
+     * Parameterized Constructor
+     * @param inA
+     * @param inC
+     * @param inG
+     * @param inT
+     * @param in$
+     */
+    InternalNode(DNATreeNode inA, DNATreeNode inC, DNATreeNode inG, DNATreeNode inT, DNATreeNode in$){
+        a = inA;
+        c = inC;
+        g = inG;
+        t = inT;
+        $ = in$;
+    }
+    
+    /**
+     * @param inA
+     */
+    public void setA(DNATreeNode inA) {
+        a = inA;
+    }
+    
+    /**
+     * @param inG
+     */
+    public void setG(DNATreeNode inG) {
+        g = inG;
+    }
+    
+    /**
+     * @param inC
+     */
+    public void setC(DNATreeNode inC) {
+        c = inC;
+    }
+    
+    /**
+     * @param inT
+     */
+    public void setT(DNATreeNode inT) {
+        t = inT;
+    }
 
+    /**
+     * @param in$
+     */
+    public void set$(DNATreeNode in$) {
+        a = in$;
+    }
+    
+    
+    /**
+     * Getter for a child
+     * @return DNATreeNode a 
+     */
+    public DNATreeNode a() {
+        return a;
+    }
+    
+    /**
+     * Getter for g child
+     * @return DNATreeNode g 
+     */
+    public DNATreeNode g() {
+        return g;
+    }
+        
+    /**
+     * Getter for c child
+     * @return DNATreeNode c
+     */
+    public DNATreeNode c() {
+        return c;
+    }
+    
+    /**
+     * Getter for t child
+     * @return DNATreeNode t
+     */
+    public DNATreeNode t() {
+        return t;
+    }
+    
+    /**
+     * Getter for $ child
+     * @return DNATreeNode t
+     */
+    public DNATreeNode $() {
+        return t;
+    }
+    
+    /**
+     * Stores the a branch of the node
+     */
+    private DNATreeNode a;
+    /**
+     * Stores the c branch of the node
+     */
+    private DNATreeNode c;
+    /**
+     * Stores the g branch of the node
+     */
+    private DNATreeNode g;
+    /**
+     * Stores the t branch of the node
+     */
+    private DNATreeNode t;
+    /**
+     * Stores the $ branch of the node
+     */
+    private DNATreeNode $;
 }

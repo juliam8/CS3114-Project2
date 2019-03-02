@@ -26,7 +26,7 @@ public class FlyweightNode extends DNATreeNode {
     }
     
     /**
-     * Private member variable for FlyweightNode
+     * Private member variable for Flyweight node
      */
     private static final FlyweightNode emptyFly = new FlyweightNode();
 
