@@ -49,15 +49,9 @@ public class Parser {
             else if (command.equals("remove")) {
                 remove();
             } 
-            else if (command.equals("regionsearch")) {
-                regionSearch();
-            } 
             else if (command.equals("search")) {
                 RectKey nodeKey = new RectKey(mScan.next());
                 mBST.search(nodeKey);
-            } 
-            else if (command.equals("intersections")) {
-                intersections();
             } 
             else if (command.equals("print")) {
                 mBST.print();
@@ -92,28 +86,6 @@ public class Parser {
         }
     }
 
-    /**
-     * Check if the given x y w h represents a valid region
-     * Call the BST regionSearch method if so
-     */
-    private void regionSearch() {
-        // data is an array that holds the region coordinates
-        int[] data = new int[4];
-        for (int i = 0; i < 4; i++) {
-            data[i] = Integer.parseInt(mScan.next());
-        }
-        // regionData holds the data for region search
-        RectData regionData = new RectData(data);
-        // command rejected if width/height is <= 0
-        if (data[2] <= 0 || data[3] <= 0) { 
-            System.out.println("Rectangle rejected " + regionData);
-        }
-        else {
-            System.out.println("Rectangles intersecting region (" 
-                                            + regionData + "):");
-            mBST.regionSearch(mBST.root(), regionData);
-        }
-    }
 
     /**
      * Determines whether remove by key or remove
@@ -142,40 +114,6 @@ public class Parser {
     }
 
     /**
-     * Removes a node with the given Data value
-     */
-    private void removeData() {
-        // valid will hold the first data value
-        String invalidData = "";
-        // data holds the coordinates of rectangle to remove
-        int[] data = new int[4];
-        
-        for (int i = 0; i < 4; i++) {
-            if (mScan.hasNextInt()) {
-                invalidData = mScan.next();
-                data[i] = Integer.parseInt(invalidData);
-            }
-            else {
-                System.out.println("Rectangle rejected " + invalidData);
-                return;
-            }       
-        }
-        // removeData is the data of the node to remove
-        RectData removeData = new RectData(data);
-        mBST.remove(removeData);
-         
-    }
-    
-    /**
-     * Calls the BST method to report all intersecting
-     * rectangles
-     */
-    private void intersections() {
-        System.out.println("Intersection pairs:");
-        mBST.intersection();
-    }
-
-    /**
      * This holds the scanner for the input file
      */
     private Scanner mScan;
@@ -184,6 +122,6 @@ public class Parser {
      * This holds the tree commands are executed upon
      * made protected for testing purposes
      */
-    protected BSTRectangle<RectKey, RectData> mBST;
+    protected Tree<char[]> mBST;
 }
 

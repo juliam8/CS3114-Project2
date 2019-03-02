@@ -53,7 +53,6 @@ public class InternalNode extends DNATreeNode {
     public void setT(DNATreeNode inT) {
         t = inT;
     }
-    
 
     /**
      * @param in$

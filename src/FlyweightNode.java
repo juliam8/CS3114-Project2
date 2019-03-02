@@ -10,6 +10,27 @@
  * Flyweight Node Object
  * *description*
  */
-public class FlyweightNode {
+public class FlyweightNode extends DNATreeNode {
+    
+    /**
+     * Constructor for FlyweightNode class
+     */
+    FlyweightNode(){}
+    
+    /**
+     * Get the flyweight node pointer
+     * @return the flyweight node
+     */
+    public static FlyweightNode getFlyweight() {
+        return emptyFly;
+    }
+    
+    /**
+     * Private member variable for FlyweightNode
+     */
+    private static final FlyweightNode emptyFly = new FlyweightNode();
+
+
+
 
 }
