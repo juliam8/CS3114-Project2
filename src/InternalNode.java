@@ -9,6 +9,7 @@
  * Internal Node Object
  * *description*
  */
+
 public class InternalNode extends DNATreeNode {
     /**
      * Parameterized Constructor

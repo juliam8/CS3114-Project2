@@ -13,7 +13,7 @@ import BST.BSTIterator;
  * Tree Object
  * *description*
  */
-public class Tree<DNATreeNode> {
+public class Tree<DNATreeNode<S>> {
     
     /**
      * Constructor for the Tree class 
@@ -131,15 +131,15 @@ public class Tree<DNATreeNode> {
     /**
      * Calls dump helper and prints out words for dump 
      */
-    public void dump() {
-        System.out.print("BST dump:\n");
+    public void print() {
+        System.out.print("Tree print:\n");
         if (root != null) {
             dumpHelper(root, 0);
         }
         else {
             System.out.println("    Node has depth 0, Value (null)");
         }
-        System.out.println("    BST size is: " + nodeCount);
+        System.out.println("    Tree size is: " + nodeCount);
     }
 
     /**
@@ -147,7 +147,7 @@ public class Tree<DNATreeNode> {
      * @param rt type BSTNode<K, D> the root node of the BST
      * @param depth the depth of the node being printed
      */
-    private void dumpHelper(BSTNode<K, D> rt, int depth) { 
+    private void dumpHelper(DNATreeNode rt, int depth) { 
         if (rt != null) {
             dumpHelper(rt.left(), depth + 1);
             System.out.print("    Node has depth " + depth + ", Value ");
