@@ -20,6 +20,14 @@ public class LeafNode extends DNATreeNode{
     }
     
     /**
+     * Sets the DNA sequence to a new value
+     * @param sequence
+     */
+    public void setDNA(char[] sequence) {
+        DNASequence = sequence;
+    }
+    
+    /**
      * Returns the DNA sequence for this leaf node
      * @return the DNA sequence
      */
