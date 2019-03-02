@@ -11,6 +11,7 @@
  */
 
 public class InternalNode extends DNATreeNode {
+    
     /**
      * Parameterized Constructor
      * @param inA

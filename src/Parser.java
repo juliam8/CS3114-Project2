@@ -74,7 +74,7 @@ public class Parser {
         newNode = new BSTNode<RectKey, RectData>(nodeKey, nodeData);
         
         if (validData(data) && validKey(name)) {
-            mBST.insert(newNode);
+            mTree.insert(newNode);
             System.out.println("Rectangle accepted: " + newNode);
         } 
         else {
