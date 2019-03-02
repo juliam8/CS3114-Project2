@@ -8,5 +8,11 @@ package DNAtree;
  *
  */
 public class DNATreeNode {
+    
+    
+    DNATreeNode(String dna){
+        
+    }
+    
 
 }

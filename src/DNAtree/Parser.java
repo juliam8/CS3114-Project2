@@ -76,16 +76,15 @@ public class Parser {
      */
     private void insert() {
         // name is the key of the inserted rectangle
-        String name = mScan.next();
+        String dna = mScan.next();
         // data is an array that holds the rectangle coordinates
         int[] data = new int[4];
         for (int i = 0; i < 4; i++) {
             data[i] = Integer.parseInt(mScan.next());
         }
         // nodeKey and nodeData are the elements of the new node, newNode
-        RectKey nodeKey = new RectKey(name);
-        RectData nodeData = new RectData(data);
-        BSTNode<RectKey, RectData> newNode;
+        
+        DNATreeNode<String> newNode;
         newNode = new BSTNode<RectKey, RectData>(nodeKey, nodeData);
         
         if (validData(data) && validKey(name)) {
