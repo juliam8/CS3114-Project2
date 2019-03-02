@@ -1,7 +1,4 @@
-/**
- * 
- */
-package DNAtree;
+
 
 /**
  * @author juliam8

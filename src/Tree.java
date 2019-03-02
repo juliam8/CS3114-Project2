@@ -1,4 +1,3 @@
-package DNAtree;
 
 import java.util.Iterator;
 
