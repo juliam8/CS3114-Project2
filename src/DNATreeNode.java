@@ -1,7 +1,3 @@
-/**
- * 
- */
-package DNAtree;
 
 /**
  * @author jmkuz

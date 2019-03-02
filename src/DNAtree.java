@@ -1,4 +1,3 @@
-package DNAtree;
 
 //On my honor:
 //
