@@ -51,3 +51,16 @@ public class DNAtree {
   }
 
 }
+
+
+/*
+// bstRect is the binary search tree used 
+// to store nodes containing rectangle information
+BSTRectangle<RectKey, RectData> bstRect;
+bstRect = new BSTRectangle<RectKey, RectData>();
+
+// parse is a Parser object used to interpret the 
+// input file contents and execute commands
+Parser parse = new Parser(new File(args[0]), bstRect);
+parse.execute();
+*/
