@@ -13,14 +13,14 @@ import BST.BSTIterator;
  * Tree Object
  * *description*
  */
-public class Tree {
+public class Tree<DNATreeNode> {
     
     /**
      * Constructor for the Tree class 
      * Sets the private member variables
      */
-    Tree() {
-        root = null;
+    Tree(char[] sequence) {
+        DNAsequence = sequence;
         nodeCount = 0;
     }
 
@@ -237,7 +237,12 @@ public class Tree {
     /**
      * The number of nodes in the BST
      */
-    protected int nodeCount;    
+    protected int nodeCount;   
+    
+    /**
+     * The DNA sequence in the node
+     */
+    protected char[] DNAsequence;   
     
 
 }

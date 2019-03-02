@@ -7,9 +7,10 @@
  * @param 
  * @param 
  *
- * Flyweight Node Object
+ * DNA Node Object
  * *description*
  */
+
 public class DNATreeNode {
     
     
