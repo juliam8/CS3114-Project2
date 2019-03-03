@@ -76,7 +76,12 @@ public class Tree<N> {
      * @return the root of the DNA Tree
      */
     public DNATreeNode root() {
-        return root;
+        switch(indicator) {
+            case 1: return (DNATreeNode)root1;
+            case 2: return (DNATreeNode)root2;
+            case 3: return (DNATreeNode)root3;
+            default: return null;
+        }
     }
 
     /**
@@ -88,7 +93,7 @@ public class Tree<N> {
     }
 
     /**
-     * The root of the DNA Tree
+     * The root of the DNATree
      */
     protected DNATreeNode root;
     protected FlyweightNode root1;
