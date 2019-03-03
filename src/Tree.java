@@ -11,10 +11,10 @@ import java.util.Iterator;
  * Tree Object
  * *description*
  */
-public class Tree<DNATreeNode> {
+public class Tree<N> {
     
     Tree(){
-        root1 = new FlyweightNode();
+        root = new FlyweightNode();
     }
     
     /**
@@ -67,6 +67,7 @@ public class Tree<DNATreeNode> {
     /**
      * The root of the DNATree
      */
+    protected DNATreeNode root;
     protected FlyweightNode root1;
     protected LeafNode root2;
     protected InternalNode root3;

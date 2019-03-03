@@ -94,7 +94,12 @@ public class Parser {
         
         BSTNode<RectKey, RectData> temp = mTree.remove(sequence);
         if (temp == null) {
-            System.out.println("Rectangle rejected " + removeKey);
+            System.out.print("sequence " + sequence.toString() );
+            System.out.print(" does not exist");
+        }
+        else {
+            System.out.print("sequence " + sequence.toString() );
+            System.out.print(" removed");
         }
     }
 
