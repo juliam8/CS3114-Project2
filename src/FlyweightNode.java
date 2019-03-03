@@ -15,13 +15,14 @@ public class FlyweightNode extends DNATreeNode {
     /**
      * Constructor for FlyweightNode class
      */
-    FlyweightNode(){}
+    FlyweightNode(){
+    }
     
     /**
      * Get the flyweight node pointer
      * @return the flyweight node
      */
-    public static FlyweightNode getFlyweight() {
+    public FlyweightNode getFlyweight() {
         return emptyFly;
     }
     
