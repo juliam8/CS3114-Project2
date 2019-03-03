@@ -43,22 +43,21 @@ public class Tree<N> {
      * @param node the node to insert
      * @return the level at which the node is inserted
      */
-    public int insert(DNATreeNode node) {
-        root = root.insert(node, 0);
+    public void insert(char[] sequence) {
+        root = root.insert(sequence, sequence);
         nodeCount++;
-        return 1;
     }
     
     /**
      * @param sequence
      * @return
-     */
+     
     public DNATreeNode remove(char[] sequence) {
         root.remove(sequence);
         
         // TODO Auto-generated method stub
         return null;
-    }   
+    }   */
     
     /**
      * Prints out the sequences in the tree in pre-order
@@ -83,12 +82,7 @@ public class Tree<N> {
      * @return the root of the DNA Tree
      */
     public DNATreeNode root() {
-        switch(indicator) {
-            case 1: return (DNATreeNode)root1;
-            case 2: return (DNATreeNode)root2;
-            case 3: return (DNATreeNode)root3;
-            default: return null;
-        }
+        return root;
     }
 
     /**
@@ -103,10 +97,6 @@ public class Tree<N> {
      * The root of the DNATree
      */
     protected DNATreeNode root;
-    protected FlyweightNode root1;
-    protected LeafNode root2;
-    protected InternalNode root3;
-    protected int indicator = 1;
     
     /**
      * The number of nodes in the DNA Tree

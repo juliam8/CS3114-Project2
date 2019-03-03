@@ -10,7 +10,7 @@
  * Flyweight Node Object
  * *description*
  */
-public class FlyweightNode extends DNATreeNode {
+public class FlyweightNode implements DNATreeNode {
     
     /**
      * Constructor for FlyweightNode class
@@ -19,11 +19,36 @@ public class FlyweightNode extends DNATreeNode {
     }
     
     /**
+     * Replaces empty node with a leaf node
+     * @param sequence
+     * @return the new node 
+     */
+    public DNATreeNode insert(char[] sequence, char[] modSeq) {
+        return new LeafNode(sequence);
+    }
+    
+    /**
      * Get the flyweight node pointer
      * @return the flyweight node
      */
-    public FlyweightNode getFlyweight() {
+    public DNATreeNode getFlyweight() {
         return emptyFly;
+    }
+    
+    /** 
+     * Return false because it is not a leaf
+     * @return boolean 
+     */
+    public boolean isLeaf() {
+        return false;
+    }
+    
+    /**
+     * Returns true because this is a flyweight node
+     * @return boolean
+     */
+    public boolean isFlyweight() {
+        return true;
     }
     
     /**

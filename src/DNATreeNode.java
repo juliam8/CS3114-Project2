@@ -8,17 +8,10 @@
  * *description*
  */
 
-public class DNATreeNode {
+public interface DNATreeNode {
+    
+    boolean isLeaf();
+    boolean isFlyweight();
+    DNATreeNode insert(char[] sequence, char[] modSeq);
 
-    DNATreeNode(){
-        
-    };
-    
-    void insert(DNATreeNode node) {
-        
-    }
-    
-    void remove(char[] sequence) {
-        
-    }
 }

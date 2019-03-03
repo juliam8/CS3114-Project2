@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 /**
  * @author juliam8
@@ -10,8 +11,19 @@
  * *description*
  */
 
-public class InternalNode extends DNATreeNode {
+public class InternalNode implements DNATreeNode {
     
+    /**
+     * Default Constructor
+     * sets all child pointers to the flyweight
+     */
+    InternalNode(){
+        a = new FlyweightNode();
+        g = new FlyweightNode();
+        c = new FlyweightNode();
+        t = new FlyweightNode();
+        $ = new FlyweightNode();
+    }
     /**
      * Parameterized Constructor
      * @param inA
@@ -26,6 +38,34 @@ public class InternalNode extends DNATreeNode {
         g = inG;
         t = inT;
         $ = in$;
+    }
+    
+    /**
+     * @param sequence
+     * @return DNATreeNode 
+     */
+    public DNATreeNode insert(char[] sequence, char[] modSeq) {
+        if (modSeq.length == 0) {
+            LeafNode n = new LeafNode(sequence);
+            set$(n);
+        }
+        else if (modSeq[0] == 'A') {
+            modSeq = Arrays.copyOfRange(modSeq, 1, modSeq.length);
+            setA(a.insert(sequence, modSeq));
+        }
+        else if (modSeq[0] == 'C') {
+            modSeq = Arrays.copyOfRange(modSeq, 1, modSeq.length);
+            setC(c.insert(sequence, modSeq));
+        }
+        else if (modSeq[0] == 'G') {
+            modSeq = Arrays.copyOfRange(modSeq, 1, modSeq.length);
+            setG(g.insert(sequence, modSeq));
+        }
+        else if (modSeq[0] == 'T') {
+            modSeq = Arrays.copyOfRange(modSeq, 1, modSeq.length);
+            setT(t.insert(sequence, modSeq));
+        }
+        return this;
     }
     
     /**
@@ -60,7 +100,7 @@ public class InternalNode extends DNATreeNode {
      * @param in$
      */
     public void set$(DNATreeNode in$) {
-        a = in$;
+        $ = in$;
     }
     
     
@@ -101,7 +141,23 @@ public class InternalNode extends DNATreeNode {
      * @return DNATreeNode t
      */
     public DNATreeNode $() {
-        return t;
+        return $;
+    }
+    
+    /**
+     * This is an internal node, not a leaf
+     * @return false
+     */
+    public boolean isLeaf() {
+        return false;
+    }
+    
+    /**
+     * This is an internal node, not a flyweight
+     * @return false
+     */
+    public boolean isFlyweight() {
+        return false;
     }
     
     /**

@@ -9,7 +9,7 @@
  * Leaf Node Object
  * *description*
  */
-public class LeafNode extends DNATreeNode{
+public class LeafNode implements DNATreeNode{
     
     /**
      * Constructor for LeafNode class
@@ -33,6 +33,17 @@ public class LeafNode extends DNATreeNode{
         percentC = count[1] / length;
         percentG = count[2] / length;
         percentT = count[3] / length;
+    }
+    
+    /**
+     * @param sequence
+     * @return
+     */
+    public DNATreeNode insert(char[] sequence, char[] modSeq) {
+        InternalNode n = new InternalNode();
+        n.insert(DNASequence, DNASequence);
+        n.insert(sequence, sequence);
+        return n;
     }
     
     /**
