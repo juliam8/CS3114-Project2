@@ -42,25 +42,53 @@ public class Tree<N> {
         root.insert(node);
         nodeCount++;
     }
+    
+    /**
+     * @param sequence
+     * @return
+     */
+    public DNATreeNode remove(char[] sequence) {
+        root.remove(sequence);
+        
+        // TODO Auto-generated method stub
+        return null;
+    }   
+    
+    /**
+     * Prints out the sequences in the tree in pre-order
+     */
+    public void print() {
+        // TODO Auto-generated method stub
+        
+    }
+    
+    /**
+     * Searches for occurences of a sequence within the tree
+     * @param sequence the sequence to find within the tree
+     */
+    public void search(char[] sequence) {
+        // TODO Auto-generated method stub
+        
+    }
 
     /**
-     * Returns the root of the BST
-     * @return the root of the BST
+     * Returns the root of the DNA Tree
+     * @return the root of the DNA Tree
      */
     public DNATreeNode root() {
         return root;
     }
 
     /**
-     * Returns the node count of the BST
-     * @return the number of nodes in the BST
+     * Returns the node count of the DNA Tree
+     * @return the number of nodes in the DNA Tree
      */
     public int nodeCount() {
         return nodeCount;
     }
 
     /**
-     * The root of the BST
+     * The root of the DNA Tree
      */
     protected DNATreeNode root;
     protected FlyweightNode root1;
@@ -69,14 +97,14 @@ public class Tree<N> {
     protected int indicator = 1;
     
     /**
-     * The number of nodes in the BST
+     * The number of nodes in the DNA Tree
      */
     protected int nodeCount;   
     
     /**
      * The DNA sequence in the node
      */
-    protected char[] DNAsequence;   
-    
+    protected char[] DNAsequence;
+ 
 
 }

@@ -32,6 +32,4 @@ public class FlyweightNode extends DNATreeNode {
     private static final FlyweightNode emptyFly = new FlyweightNode();
 
 
-
-
 }

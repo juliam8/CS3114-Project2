@@ -6,18 +6,18 @@ import java.util.*;
 /**
  * @author juliam8
  * @author abbym1
- * @version 2019-02-14
+ * @version 2019-03-02
  *
  * This object parses a file and interprets the contents according to
- * CS3114 Project 1 requirements
+ * CS3114 Project 2 requirements
  */
 public class Parser {
     /**
      * Parameterized constructor for the Parser class Sets the private member
-     * variables mBST and mScan
+     * variables mTree and mScan
      * 
      * @param inputFile     Path to the input file containing the commands
-     * @param rectBST       Binary Search tree associated with the parser object
+     * @param dnaTree       DNA tree associated with the parser object
      *                      and input file upon which the commands will be run
      */
     Parser(File inputFile, Tree<char[]> dnaTree) {
@@ -50,8 +50,7 @@ public class Parser {
                 remove();
             } 
             else if (command.equals("search")) {
-                RectKey nodeKey = new RectKey(mScan.next());
-                mTree.search(nodeKey);
+                mTree.search(mScan.next().toCharArray());
             } 
             else if (command.equals("print")) {
                 mTree.print();
@@ -61,19 +60,38 @@ public class Parser {
     }
     
     /**
+     * Checks input DNA sequence for validity
+     * @param sequence     Input sequence
+     * @return      True for a valid sequence, else False
+     */
+    private boolean validSequence(char[] sequence) {
+        // validChars holds all valid characters for the sequence
+        String validChars = "ACGT";
+  
+        for (int i = 0; i < sequence.length; ++i) {
+            // j is a single character in the key
+            String checkChar = Character.toString(sequence[i]);
+            if (!validChars.contains(checkChar)) {
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    /**
      * Method to execute the BST insert command 
      * Accepts or rejects the input rectangle based on 0,0 1024,1024 bounds
      */
     private void insert() {
-        // name is the key of the inserted rectangle
+        // dna is the name of the sequence to insert
         String dna = mScan.next();
         // data is an array that holds the rectangle coordinates
         char[] sequence = dna.toCharArray();
         
-        DNATreeNode<String> newNode;
-        newNode = new BSTNode<RectKey, RectData>(nodeKey, nodeData);
+        DNATreeNode newNode;
+        newNode = new LeafNode(sequence);
         
-        if (validData(data) && validKey(name)) {
+        if (validSequence(sequence)) {
             mTree.insert(newNode);
             System.out.println("Rectangle accepted: " + newNode);
         } 
@@ -87,12 +105,13 @@ public class Parser {
      * Remove the DNA sequence that is read in from the tree
      */
     private void remove() {
-        // name is the key of the inserted rectangle
+        // dna is the name of the sequence to remove
         String dna = mScan.next();
         // data is an array that holds the rectangle coordinates
         char[] sequence = dna.toCharArray();
         
-        BSTNode<RectKey, RectData> temp = mTree.remove(sequence);
+        DNATreeNode temp = mTree.remove(sequence);
+        
         if (temp == null) {
             System.out.print("sequence " + sequence.toString() );
             System.out.print(" does not exist");

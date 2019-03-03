@@ -17,4 +17,8 @@ public class DNATreeNode {
     void insert(DNATreeNode node) {
         
     }
+    
+    void remove(char[] sequence) {
+        
+    }
 }
