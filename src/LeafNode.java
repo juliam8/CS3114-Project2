@@ -35,6 +35,21 @@ public class LeafNode extends DNATreeNode{
         return DNASequence;
     }
     
+    /**
+     * Check for if the node is a leaf node
+     * @return
+     */
+    public boolean isLeaf() {
+        return true;
+    }
+    
+    /**
+     * Check for if the node is a flyweight node
+     * @return
+     */
+    public boolean isFlyweight() {
+        return false;
+    }
     
     /**
      * Member variable that holds the DNA sequence of the node
