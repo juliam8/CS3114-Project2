@@ -10,8 +10,19 @@
  * *description*
  */
 
-public class InternalNode extends DNATreeNode {
+public class InternalNode implements DNATreeNode {
     
+    /**
+     * Default Constructor
+     * sets all child pointers to the flyweight
+     */
+    InternalNode(){
+        a = new FlyweightNode();
+        g = new FlyweightNode();
+        c = new FlyweightNode();
+        t = new FlyweightNode();
+        $ = new FlyweightNode();
+    }
     /**
      * Parameterized Constructor
      * @param inA
@@ -26,6 +37,11 @@ public class InternalNode extends DNATreeNode {
         g = inG;
         t = inT;
         $ = in$;
+    }
+    
+    public InternalNode insert(char[] sequence) {
+        int index = 0;
+        return new InternalNode();
     }
     
     /**
@@ -60,7 +76,7 @@ public class InternalNode extends DNATreeNode {
      * @param in$
      */
     public void set$(DNATreeNode in$) {
-        a = in$;
+        $ = in$;
     }
     
     
@@ -101,7 +117,23 @@ public class InternalNode extends DNATreeNode {
      * @return DNATreeNode t
      */
     public DNATreeNode $() {
-        return t;
+        return $;
+    }
+    
+    /**
+     * This is an internal node, not a leaf
+     * @return false
+     */
+    public boolean isLeaf() {
+        return false;
+    }
+    
+    /**
+     * This is an internal node, not a flyweight
+     * @return false
+     */
+    public boolean isFlyweight() {
+        return false;
     }
     
     /**

@@ -38,8 +38,8 @@ public class Tree<N> {
      * Calls insert helper and to increment node count 
      * @param node the node to insert
      */
-    public void insert(DNATreeNode node) {
-        root.insert(node);
+    public void insert(char[] sequence) {
+        root = root.insert(sequence);
         nodeCount++;
     }
 
@@ -48,12 +48,7 @@ public class Tree<N> {
      * @return the root of the BST
      */
     public DNATreeNode root() {
-        switch(indicator) {
-            case 1: return (DNATreeNode)root1;
-            case 2: return (DNATreeNode)root2;
-            case 3: return (DNATreeNode)root3;
-            default: return null;
-        }
+        return root;
     }
 
     /**
@@ -68,10 +63,6 @@ public class Tree<N> {
      * The root of the DNATree
      */
     protected DNATreeNode root;
-    protected FlyweightNode root1;
-    protected LeafNode root2;
-    protected InternalNode root3;
-    protected int indicator = 1;
     
     /**
      * The number of nodes in the BST
