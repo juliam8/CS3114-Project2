@@ -57,6 +57,4 @@ public class FlyweightNode implements DNATreeNode {
     private static final FlyweightNode emptyFly = new FlyweightNode();
 
 
-
-
 }
