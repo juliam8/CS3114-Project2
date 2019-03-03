@@ -47,6 +47,14 @@ public class LeafNode implements DNATreeNode{
     }
     
     /**
+     * Prints out an Leaf Node key
+     * @param node
+     */
+    public void print(DNATreeNode node) {
+        System.out.println(DNASequence);
+    }
+    
+    /**
      * Sets the DNA sequence to a new value
      * @param sequence
      */

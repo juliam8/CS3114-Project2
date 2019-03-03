@@ -69,6 +69,14 @@ public class InternalNode implements DNATreeNode {
     }
     
     /**
+     * Prints out an Internal Node key
+     * @param node
+     */
+    public void print(DNATreeNode node) {
+        System.out.println("I");
+    }
+    
+    /**
      * @param inA
      */
     public void setA(DNATreeNode inA) {

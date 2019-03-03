@@ -1,6 +1,4 @@
 
-import java.util.Iterator;
-
 /**
  * @author juliam8
  * @author abbym1
@@ -57,12 +55,15 @@ public class Tree<N> {
         
         // TODO Auto-generated method stub
         return null;
-    }   */
+    }*/
     
     /**
      * Prints out the sequences in the tree in pre-order
      */
     public void print() {
+        if (root == null) return;
+        root.print(root);
+        
         // TODO Auto-generated method stub
         
     }
@@ -107,6 +108,4 @@ public class Tree<N> {
      * The DNA sequence in the node
      */
     protected char[] DNAsequence;
- 
-
 }

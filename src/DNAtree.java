@@ -44,22 +44,18 @@ public class DNAtree {
    * 
    * 
    */
-  public static void main(String[] args) {
+  public static void main(String[] args) throws FileNotFoundException{
+      
+          // myTree is the DNA tree used 
+          // to store ACGT nodes
+          Tree<DNATreeNode> myTree;
+          myTree = new Tree<DNATreeNode>();
+          
+          // parse is a Parser object used to interpret the 
+          // input file contents and execute commands
+          Parser parse = new Parser(new File(args[0]), myTree);
+          parse.execute();
+      }
       // TODO Auto-generated method stub
 
   }
-
-}
-
-
-/*
-// bstRect is the binary search tree used 
-// to store nodes containing rectangle information
-BSTRectangle<RectKey, RectData> bstRect;
-bstRect = new BSTRectangle<RectKey, RectData>();
-
-// parse is a Parser object used to interpret the 
-// input file contents and execute commands
-Parser parse = new Parser(new File(args[0]), bstRect);
-parse.execute();
-*/

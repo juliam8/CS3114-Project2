@@ -20,7 +20,7 @@ public class Parser {
      * @param dnaTree       DNA tree associated with the parser object
      *                      and input file upon which the commands will be run
      */
-    Parser(File inputFile, Tree<char[]> dnaTree) {
+    Parser(File inputFile, Tree<DNATreeNode> dnaTree) {
         try {
             mTree = dnaTree;
             mScan = new Scanner(inputFile);
@@ -90,8 +90,8 @@ public class Parser {
         //seq is the String cast of sequence
         String seq = sequence.toString();
         
-        DNATreeNode newNode;
-        newNode = new LeafNode(sequence);
+        //DNATreeNode newNode;
+        //newNode = new LeafNode(sequence);
         
         if (!validSequence(sequence)) {
             System.out.println("sequence rejected: " + seq);
@@ -101,7 +101,7 @@ public class Parser {
             System.out.println(" already exists");
         } 
         else {
-            mTree.insert(newNode);
+            mTree.insert(sequence);
         }
     }
 
@@ -115,16 +115,18 @@ public class Parser {
         // data is an array that holds the rectangle coordinates
         char[] sequence = dna.toCharArray();
         
-        DNATreeNode temp = mTree.remove(sequence);
         
-        if (temp == null) {
+        
+       // DNATreeNode temp = null;// = mTree.remove(sequence);
+        
+       /* if (sequence == null) {
             System.out.print("sequence " + sequence.toString() );
             System.out.print(" does not exist");
         }
         else {
             System.out.print("sequence " + sequence.toString() );
             System.out.print(" removed");
-        }
+        }*/
     }
 
     /**
@@ -136,6 +138,6 @@ public class Parser {
      * This holds the tree commands are executed upon
      * made protected for testing purposes
      */
-    protected Tree<char[]> mTree;
+    protected Tree<DNATreeNode> mTree;
 }
 

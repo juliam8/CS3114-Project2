@@ -1,4 +1,4 @@
-import static org.junit.Assert.*;
+
 
 import student.TestCase;
 /**
@@ -9,13 +9,15 @@ import student.TestCase;
  * @author amalone46
  *
  */
-public class TreeTest {
+public class TreeTest extends TestCase{
 
     /**
      * Test method for {@link Tree#Tree()}.
      */
     public final void testTree() {
-        fail("Not yet implemented"); // TODO
+        Tree<DNATreeNode> mytree = new Tree<DNATreeNode>();
+        assertEquals(mytree.nodeCount(), 0);
+        assertEquals(mytree.root(), null);
     }
 
     /**
