@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 /**
  * @author juliam8
@@ -39,9 +40,32 @@ public class InternalNode implements DNATreeNode {
         $ = in$;
     }
     
-    public InternalNode insert(char[] sequence) {
-        int index = 0;
-        return new InternalNode();
+    /**
+     * @param sequence
+     * @return DNATreeNode 
+     */
+    public DNATreeNode insert(char[] sequence, char[] modSeq) {
+        if (modSeq.length == 0) {
+            LeafNode n = new LeafNode(sequence);
+            set$(n);
+        }
+        else if (modSeq[0] == 'A') {
+            modSeq = Arrays.copyOfRange(modSeq, 1, modSeq.length);
+            setA(a.insert(sequence, modSeq));
+        }
+        else if (modSeq[0] == 'C') {
+            modSeq = Arrays.copyOfRange(modSeq, 1, modSeq.length);
+            setC(c.insert(sequence, modSeq));
+        }
+        else if (modSeq[0] == 'G') {
+            modSeq = Arrays.copyOfRange(modSeq, 1, modSeq.length);
+            setG(g.insert(sequence, modSeq));
+        }
+        else if (modSeq[0] == 'T') {
+            modSeq = Arrays.copyOfRange(modSeq, 1, modSeq.length);
+            setT(t.insert(sequence, modSeq));
+        }
+        return this;
     }
     
     /**

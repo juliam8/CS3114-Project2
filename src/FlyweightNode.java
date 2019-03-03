@@ -23,7 +23,7 @@ public class FlyweightNode implements DNATreeNode {
      * @param sequence
      * @return the new node 
      */
-    public LeafNode insert(char[] sequence) {
+    public DNATreeNode insert(char[] sequence, char[] modSeq) {
         return new LeafNode(sequence);
     }
     
@@ -31,7 +31,7 @@ public class FlyweightNode implements DNATreeNode {
      * Get the flyweight node pointer
      * @return the flyweight node
      */
-    public FlyweightNode getFlyweight() {
+    public DNATreeNode getFlyweight() {
         return emptyFly;
     }
     

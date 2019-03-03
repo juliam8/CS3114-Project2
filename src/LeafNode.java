@@ -39,10 +39,10 @@ public class LeafNode implements DNATreeNode{
      * @param sequence
      * @return
      */
-    public InternalNode insert(char[] sequence) {
+    public DNATreeNode insert(char[] sequence, char[] modSeq) {
         InternalNode n = new InternalNode();
-        n.insert(DNASequence);
-        n.insert(sequence);
+        n.insert(DNASequence, DNASequence);
+        n.insert(sequence, sequence);
         return n;
     }
     

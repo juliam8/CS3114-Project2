@@ -44,20 +44,20 @@ public class Tree<N> {
      * @return the level at which the node is inserted
      */
     public void insert(char[] sequence) {
-        root = root.insert(sequence);
+        root = root.insert(sequence, sequence);
         nodeCount++;
     }
     
     /**
      * @param sequence
      * @return
-     */
+     
     public DNATreeNode remove(char[] sequence) {
         root.remove(sequence);
         
         // TODO Auto-generated method stub
         return null;
-    }   
+    }   */
     
     /**
      * Prints out the sequences in the tree in pre-order
