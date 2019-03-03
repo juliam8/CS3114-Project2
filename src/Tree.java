@@ -48,7 +48,12 @@ public class Tree<DNATreeNode> {
      * @return the root of the BST
      */
     public DNATreeNode root() {
-        return root;
+        switch(indicator) {
+            case 1: return (DNATreeNode)root1;
+            case 2: return (DNATreeNode)root2;
+            case 3: return (DNATreeNode)root3;
+            default: return null;
+        }
     }
 
     /**
@@ -60,7 +65,7 @@ public class Tree<DNATreeNode> {
     }
 
     /**
-     * The root of the BST
+     * The root of the DNATree
      */
     protected FlyweightNode root1;
     protected LeafNode root2;
