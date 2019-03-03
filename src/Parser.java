@@ -84,26 +84,15 @@ public class Parser {
 
 
     /**
-     * Determines whether remove by key or remove
-     * by data is appropriate
+     * Remove the DNA sequence that is read in from the tree
      */
     private void remove() {
-        if (mScan.hasNextInt()) {
-            removeData();
-        } 
-        else {
-            removeKey();
-        }
-    }
-
-    /**
-     * Removes a node with the given Key value
-     */
-    private void removeKey() {
-        // removeKey is the key of the node to remove
-        RectKey removeKey = new RectKey(mScan.next());
-        // temp is used to check if the specified node exists
-        BSTNode<RectKey, RectData> temp = mTree.remove(removeKey);
+        // name is the key of the inserted rectangle
+        String dna = mScan.next();
+        // data is an array that holds the rectangle coordinates
+        char[] sequence = dna.toCharArray();
+        
+        BSTNode<RectKey, RectData> temp = mTree.remove(sequence);
         if (temp == null) {
             System.out.println("Rectangle rejected " + removeKey);
         }
