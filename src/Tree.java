@@ -44,7 +44,7 @@ public class Tree<N> {
      * @return the level at which the node is inserted
      */
     public int insert(DNATreeNode node) {
-        root.insert(node);
+        root = root.insert(node, 0);
         nodeCount++;
         return 1;
     }
