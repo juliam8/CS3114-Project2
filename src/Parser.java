@@ -87,16 +87,23 @@ public class Parser {
         String dna = mScan.next();
         // data is an array that holds the rectangle coordinates
         char[] sequence = dna.toCharArray();
+        //seq is the String cast of sequence
+        String seq = sequence.toString();
         
         DNATreeNode newNode;
         newNode = new LeafNode(sequence);
         
-        if (validSequence(sequence)) {
-            mTree.insert(newNode);
-            System.out.println("Rectangle accepted: " + newNode);
+        if (!validSequence(sequence)) {
+            System.out.println("sequence rejected: " + seq);
+        }
+        else if (mTree.search(sequence)) {
+            System.out.println("sequence " + seq);
+            System.out.println(" already exists");
         } 
         else {
-            System.out.println("Rectangle rejected: " + newNode);
+            int level = mTree.insert(newNode);
+            System.out.println("sequence " + seq);
+            System.out.println(" inserted at level " + level);
         }
     }
 

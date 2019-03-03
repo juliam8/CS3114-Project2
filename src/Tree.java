@@ -13,6 +13,10 @@ import java.util.Iterator;
  */
 public class Tree<N> {
     
+    /**
+     * Constructor for the Tree class 
+     * Sets the root as a flyweight node
+     */
     Tree(){
         root = new FlyweightNode();
     }
@@ -37,10 +41,12 @@ public class Tree<N> {
     /**
      * Calls insert helper and to increment node count 
      * @param node the node to insert
+     * @return the level at which the node is inserted
      */
-    public void insert(DNATreeNode node) {
+    public int insert(DNATreeNode node) {
         root.insert(node);
         nodeCount++;
+        return 1;
     }
     
     /**
@@ -65,10 +71,11 @@ public class Tree<N> {
     /**
      * Searches for occurences of a sequence within the tree
      * @param sequence the sequence to find within the tree
+     * @return returns true if found
      */
-    public void search(char[] sequence) {
-        // TODO Auto-generated method stub
-        
+    public boolean search(char[] sequence) {
+               
+        return false;
     }
 
     /**
