@@ -101,9 +101,7 @@ public class Parser {
             System.out.println(" already exists");
         } 
         else {
-            int level = mTree.insert(newNode);
-            System.out.println("sequence " + seq);
-            System.out.println(" inserted at level " + level);
+            mTree.insert(newNode);
         }
     }
 
