@@ -58,18 +58,15 @@ public class Tree<N> {
     }*/
     
     /**
-     * Prints out the sequences in the tree in pre-order
+     * Prints out the sequences in the tree in pre order
      */
     public void print() {
         if (root == null) return;
         root.print(root);
-        
-        // TODO Auto-generated method stub
-        
     }
     
     /**
-     * Searches for occurences of a sequence within the tree
+     * Searches for occurrences of a sequence within the tree
      * @param sequence the sequence to find within the tree
      * @return returns true if found
      */

@@ -1,5 +1,3 @@
-
-
 /**
  * @author juliam8
  * @author abbym1
@@ -15,8 +13,7 @@ public class FlyweightNode implements DNATreeNode {
     /**
      * Constructor for FlyweightNode class
      */
-    FlyweightNode(){
-    }
+    FlyweightNode(){}
     
     /**
      * Replaces empty node with a leaf node

@@ -14,5 +14,4 @@ public interface DNATreeNode {
     boolean isFlyweight();
     DNATreeNode insert(char[] sequence, char[] modSeq);
     void print(DNATreeNode node);
-
 }
